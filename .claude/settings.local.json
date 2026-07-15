@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\")",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3100/tracks\" -UseBasicParsing -TimeoutSec 5; Write-Output \"Status: $\\($r.StatusCode\\)\"; Write-Output $r.Content } catch { Write-Output \"ERROR: $\\($_.Exception.Message\\)\" })"
+    ]
+  }
+}
